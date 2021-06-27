@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../assets/sky-wallpaper.jpg");
+    overflow-y: scroll;
+}
+
+header {
+    padding: 1em;
+    padding-left: 2em;
+    background-color: rgba(255, 255, 255, 0.849);
+    width: 100%;
+    box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -moz-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    position: fixed;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+header span {
+    color: rgb(116, 185, 197);
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+}
+
+.bookContainer {
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    height: 100%;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.closeCard {
+    height: 1em;
+    width: 100%;
+}
+
+.closeCard span {
+    float: right;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+.bookCard{
+    background-color: rgba(221, 221, 221, 0.637);
+    color: #fff;
+    text-shadow: 2px 2px 1px rgba(150, 150, 150, 1);
+    border-radius: 15px;
+    box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -moz-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    font-size: .7em;
+    padding: 1em 1em 0 1em;
+    min-height: 300px;
+    max-height: 45%;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+.bookInfo{
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: .5em;
+}
+
+.bookTitle {
+    width: 100%;
+    text-align: center;
+}
+
+.bookAuthor {
+    font-size: 1.5em;
+}
+
+.bookEdition {
+    font-size: 1.5em;
+}
+
+.bookDescription {
+    width: 100%;
+}
+
+.bookOptions {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.readBook, .deleteBook, .editBook {
+    padding: 1em;
+    background-color: rgb(116, 185, 197);
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    color: #fff;
+    border: none;
+    margin-top: 10%;
+    cursor: pointer;
+    box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -moz-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    border-radius: 15px;
+}
+
+.bookCardAdd{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.spanNewBook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    background-color: rgb(116, 185, 197);
+    position: relative;
+    cursor: pointer;
+    box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -moz-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    padding: 0;
+}
+
+.bookCardAdd span span{
+    font-size: 30px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    cursor: pointer;
+}
+
+.inputAddBook {
+    padding: 1em;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 1px solid white;
+    outline: none;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+::placeholder {
+    color: #fff;
+}
+
+.btnAddBook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 10vh;
+    height: 10vh;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(116, 185, 197);
+    box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -moz-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btnEditBook {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 10vh;
+    height: 10vh;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(116, 185, 197);
+    box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -webkit-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    -moz-box-shadow: 11px 6px 20px -12px rgba(0,0,0,0.71);
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.divBtnAddBook{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.formAddBook {
+    padding-top: 2em;
+}
+
+.deleteBook:hover, .editBook:hover, .readBook:hover {
+    background-color: #fff;
+    color: rgb(116, 185, 197);
+}
+
+.dialogInfo {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    top: 0;
+}
+
+.dialogInfo span {
+    width: 20%;
+    height: 30%;
+    background-color: rgba(116, 185, 197, 0.747);
+    text-align: center;
+    border-radius: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    color: #fff;
+    text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
+    cursor: pointer;
+}
+
+.dialogInfo span div{
+    width: 100%;
+    height: 100%;
+    grid-column-end: 4;
+    grid-column-start: 1;
+    grid-row-end: 3;
+    grid-row-start: 2;
+}
+
+.dialogInfo span div i{
+    width: 100%;
+    font-size: 4em;
+}
+
+.dialogInfo span div p{
+    width: 100%;
+    font-size: 1.2em;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    margin-top: 5px;
+}
+
+
+

@@ -1,0 +1,91 @@
+<div class="page">
+    <header>
+        <span><h2>BookApp!</h2></span>
+    </header>
+    <div class="bookContainer">
+        <div *ngFor="let book of bookList" class="bookCard">
+            <div class="bookInfo" *ngIf="!this.editing && this.bookSelected !== book.id">
+                <div class="bookTitle">
+                    <h1>{{book.titulo}}</h1>
+                </div>
+        
+                <div class="bookDescription">
+                    <div class="bookAuthor">
+                        <h5>Autor: {{book.autor}}</h5>
+                    </div>
+            
+                    <div class="bookEdition">
+                        <h5>Edición: {{book.edicion}}</h5>
+                    </div>
+                </div>
+        
+                <div class="bookOptions">
+                    <button class="deleteBook" (click)="deleteBook(book.id, book.titulo)"><i class="fas fa-trash-alt"></i></button>
+                    <button class="editBook" (click)="formEditBook(book)"><i class="fas fa-pen"></i></button>
+                    <button class="readBook"><i class="fas fa-eye"></i></button>
+                </div>
+            </div>
+            <div class="bookEdit bookCardAdd" *ngIf="editing && this.bookSelected === book.id">
+                <form [formGroup]="form">
+                    <div class="closeCard">
+                        <span *ngIf="this.editing && this.bookSelected === book.id" (click)="closeCards()">
+                            <i class="fas fa-times"></i>
+                        </span>
+                    </div>
+                    <h1>Editar Libro</h1>
+                    <div class="formAddBook">
+                        <div>
+                            <input type="text" class="inputAddBook" placeholder="Titulo" formControlName="bookTitle">
+                        </div>
+                        <div>
+                            <input type="text" class="inputAddBook" placeholder="Autor" formControlName="bookAuthor">
+                        </div>
+                        <div>
+                            <input type="text" class="inputAddBook" placeholder="Edicion" formControlName="bookEdition">
+                        </div>
+                        <div class="divBtnAddBook">
+                            <button (click)="editBook(book.id)" class="btnEditBook"><i class="fas fa-pen"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="bookCard bookCardAdd" *ngIf="!editing">
+            <span *ngIf="!this.creating" (click)="formNewBook()" class="spanNewBook">
+                <span>
+                    +
+                </span>
+            </span>
+            <form [formGroup]="form">
+                <div class="closeCard" *ngIf="this.creating" >
+                    <span (click)="closeCards()">
+                        <i class="fas fa-times"></i>
+                    </span>
+                </div>
+                <div *ngIf="this.creating" class="formAddBook">
+                    <div>
+                        <input type="text" class="inputAddBook" placeholder="Titulo" formControlName="bookTitle">
+                    </div>
+                    <div>
+                        <input type="text" class="inputAddBook" placeholder="Autor" formControlName="bookAuthor">
+                    </div>
+                    <div>
+                        <input type="text" class="inputAddBook" placeholder="Edicion" formControlName="bookEdition">
+                    </div>
+                    <div class="divBtnAddBook">
+                        <button (click)="createBook()" class="btnAddBook">+</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="dialogInfo" *ngIf="this.showDialogInfo" (click)="this.showDialogInfo = false">
+    <span>
+        <div>
+            <i class="far fa-check-circle"></i>
+            <p>{{infoStatusAbm}}</p> 
+        </div>
+    </span>
+</div>
